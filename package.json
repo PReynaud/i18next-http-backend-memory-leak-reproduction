@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "preview:inspect": "PORT=3001 node --inspect .output/server/index.mjs"
   },
   "dependencies": {
     "nuxt": "^3.13.0",
@@ -16,5 +17,6 @@
     "i18next": "23.15.1",
     "i18next-http-backend": "2.6.1",
     "i18next-vue": "5.0.0"
-  }
+  },
+  "packageManager": "pnpm@9.8.0+sha512.8e4c3550fb500e808dbc30bb0ce4dd1eb614e30b1c55245f211591ec2cdf9c611cabd34e1364b42f564bd54b3945ed0f49d61d1bbf2ec9bd74b866fcdc723276"
 }

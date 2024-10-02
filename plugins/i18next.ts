@@ -1,9 +1,9 @@
-import { defineNuxtPlugin } from '#imports';
-import type { InitOptions } from 'i18next';
-import { createInstance } from 'i18next';
-import Backend from 'i18next-http-backend';
-import I18NextVue from 'i18next-vue';
-import type { App } from 'vue';
+import { defineNuxtPlugin } from "#imports";
+import type { InitOptions } from "i18next";
+import { createInstance } from "i18next";
+import Backend from "i18next-http-backend";
+import I18NextVue from "i18next-vue";
+import type { App } from "vue";
 
 export default defineNuxtPlugin(async (nuxtApp) => {
   try {
@@ -12,12 +12,12 @@ export default defineNuxtPlugin(async (nuxtApp) => {
     const i18next = createInstance();
 
     const i18nConfiguration: InitOptions = {
-      lng: 'fr',
-      load: 'languageOnly',
+      lng: "fr",
+      load: "languageOnly",
       debug: true,
-      supportedLngs: ['fr', 'en'],
+      supportedLngs: ["fr", "en"],
       backend: {
-        loadPath: '/locales/locales.{{lng}}.json',
+        loadPath: "/public/locales/locales.{{lng}}.json",
         request: async (_: any, url: string, __: any, callback: any) => {
           try {
             const response = await useFetch(url);
@@ -25,7 +25,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
               callback(null, { status: 200, data: response });
             } else {
               callback(
-                new Error('Error while fetching current translation file')
+                new Error("Error while fetching current translation file")
               );
             }
           } catch (e) {
